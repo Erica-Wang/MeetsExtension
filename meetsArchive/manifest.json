@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+	"name": "meets focus",
+	"version": "1.0",
+	"icons":{
+		"128": "notmuted.png"
+	},
+	"content_scripts":[{
+		"matches":["https://meet.google.com/*"],
+		"run_at": "document_start",
+		"js": ["meet_controller.js"]
+	}],
+	"background":{
+		"scripts": ["keyboard_listener.js"],
+		"persistent": false
+	},
+	"permissions":[
+		"tabs",
+		"notifications"
+	],
+	"commands":{
+		"toggle":{
+			"description": "toggle mute",
+			"global": true,
+			"suggested_key": {
+				"default": "Ctrl+Shift+T",
+				"mac": "MacCtrl+Shift+T"
+			}
+		}
+	}
+}
