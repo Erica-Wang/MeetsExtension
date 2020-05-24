@@ -2,6 +2,7 @@
 
 
 chrome.runtime.onMessage.addListener((request,sender,sendResponse)=>{
+	console.log('ran')
 	var icon = 'notmuted.png'
 	//default msg
 	var message = 'could not locate mute control in Google Meeting'
