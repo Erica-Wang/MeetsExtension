@@ -1,0 +1,32 @@
+{
+    "name": "Meets Focus",
+    "version": "1.0",
+    "description": "Focus on one or a group of people in a meets call while seeing other caption of conversations in other groups.",
+    "permissions": ["activeTab","declarativeContent","tabs"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts":[{
+        "matches":["https://meet.google.com/*"],
+        "run_at": "document_start",
+        "js": ["meet_controller.js"]
+    }],
+    "page_action":{
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/get_started16.png",
+            "32": "images/get_started32.png",
+            "48": "images/get_started48.png",
+            "128": "images/get_started128.png"
+        }
+    },
+    "icons": {
+        "16": "images/get_started16.png",
+        "32": "images/get_started32.png",
+        "48": "images/get_started48.png",
+        "128": "images/get_started128.png"
+    },
+    //"options_page": "options.html",
+    "manifest_version": 2
+}

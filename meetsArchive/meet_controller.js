@@ -1,14 +1,15 @@
 "use strict";
 
-
+console.log('meet test extension start')
 chrome.runtime.onMessage.addListener((request,sender,sendResponse)=>{
 	console.log('ran')
 	var icon = 'notmuted.png'
 	//default msg
 	var message = 'could not locate mute control in Google Meeting'
-	const muteButton = document.queySelector("[area-label='Turn off microphone']")
-	const unmuteButton = document.queySelector("[area-label='Turn on microphone']")
-
+	const muteButton = document.querySelector("[aria-label='Turn off microphone (⌘ + D)']")
+	const unmuteButton = document.querySelector("[aria-label='Turn on microphone (⌘ + D)']")
+	console.log(muteButton)
+	console.log(unmuteButton)
 	const mute = () =>{
 		const btn = muteButton
 		if(btn!=null){
